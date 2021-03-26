@@ -1,0 +1,38 @@
+// procedure pour calculer dot product
+PROCEDURE dot_prodcut (n:integer, VAR v1,v2: ARRAY_OF INTEGER;)
+VAR
+    i,ps:integer;
+BEGIN
+   FOR i FROM 0 TO n-1 DO
+   FOR j FROM 0 TO n-1 DO 
+   ps=v1[i]*v2[j]   
+   END_FOR
+   END_FOR 
+END
+
+
+
+// main algorithm
+ALGORITHM 2 vectors 
+VAR
+    i,n1,n2:integer;
+    A1,A2: ARRAY_OF INTEGER;
+BEGIN
+  read(n1);
+  read(n2);
+ IF (n1=n2) THEN
+  FOR i FROM 0  TO n1-1  DO
+   read(A1[i]);
+   read(A2[i]);
+  ELSE n1=n2;
+  END_FOR    
+  END_IF
+ // calculte dot product with procedure
+  dot_product :=(n1,A1,A2);
+ // verify that two vectors of given IR are orthogonal 
+ IF (dot_product:=0) THEN
+     write("the two vectors",A1 et A2,"are orthogonal")
+ ELSE 
+  write("the two vectors",A1 et A2,"are not orthogonal")
+ END_IF
+END 
